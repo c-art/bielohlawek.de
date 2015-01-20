@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<table width=100% border=0>
+  <tr height="50">
+    <td align="right">
+      <a href="{{ page.picture.gallery.url }}" class="headln">{{ page.picture.gallery.name }}</a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="{{ page.picture.path }}" border="0" class="picborder">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      {% if page.picture.previous.url %}
+        <a href="{{ page.picture.previous.url }}">zurück</a>
+      {% endif %}
+      &nbsp;|&nbsp;
+      {% if page.picture.next.url %}
+        <a href="{{ page.picture.next.url }}">weiter</a>
+      {% endif %}
+    </td>
+  </tr>
+</table>
