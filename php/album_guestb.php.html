@@ -1,0 +1,178 @@
+<html>
+ <head>
+    <meta charset="UTF-8">
+     <script language="JavaScript" src="norclick.js"></script>
+     <link rel=stylesheet type="text/css" href="style.css">
+ </head>
+ <!-- init Script for cheking Formularinput -->
+
+  <script language='Javascript'>
+     function checkInput(form){
+      toreturn=true;
+      for (k = 0; k < document.forms[form].length; k++) {
+       fieldname = document.forms[form].elements[k].name;
+       if ((document.forms[form].elements[k].value == '') && (fieldname.indexOf('_r_')>0) && (document.forms[form].elements[k].type != 'hidden')) {
+        rstring = (fieldname.lastIndexOf('_')) ? fieldname.substring(fieldname.lastIndexOf('_') + 1, fieldname.lastIndexOf('[')) : fieldname;
+        check = true; alert('Sie haben das Feld \'' + rstring.toUpperCase() + '\' nicht ausgefüllt.');
+        if (check) {
+         document.forms[form].elements[k].focus();
+         return false;
+        }
+       }
+       if ((fieldname.indexOf('_r_')>0) && (fieldname.indexOf('email')>0) && (document.forms[form].elements[k].type != 'hidden')) {
+        if (/^([_a-zA-Z0-9-]+)(\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.([a-zA-Z]{2,4})$/.test(document.forms[form].elements[k].value)==false) {
+         check=true; alert('Sie haben eine ungültige Emailadresse angeben!');
+        if (check) {
+         document.forms[form].elements[k].focus();
+         return false;
+         }
+        }
+       }
+       if (((fieldname.indexOf('plz')>0) || (fieldname.indexOf('tele')>0) || (fieldname.indexOf('fax')>0)) && (fieldname.indexOf('_r_')>0) && (document.forms[form].elements[k].type != 'hidden')) {
+        if (/^([0-9-_\/ ]+)$/.test(document.forms[form].elements[k].value)==false) {
+         rstring = (fieldname.lastIndexOf('_')) ? fieldname.substring(fieldname.lastIndexOf('_')+1,fieldname.lastIndexOf('[')) : fieldname;
+         check=true; alert(rstring.toUpperCase()+' darf nur aus Zahlen bestehen!');
+        if (check) {
+         document.forms[form].elements[k].focus();
+         return false;
+         }
+        }
+       }
+       if ((fieldname.indexOf('_conpassword')>0) && (document.forms[form].elements[k].type != 'hidden')) {
+        if (document.forms[form].elements[k-1].value!=document.forms[form].elements[k].value) {
+        	alert('Die Passwörter stimmen nicht überein!');
+         document.forms[form].elements[k-1].focus();
+         return false;
+        }
+       }
+      }
+      return true;
+     }
+   </script>
+<body bgcolor=#AEBFE3 class=mainbody>
+  <table width=100% border=0>
+   <tr height=30>
+    <td align=right class=headln>Gästebuch</td>
+   </tr>
+   <tr class=rowbglight>
+    <td align=center><br>
+     <table cellpadding=0 cellspacing=0><tr><td class=text>
+     Was wäre eine Website ohne Gästebuch!<br>
+     Scheibt einfach was euch einfällt Kritik, Lob usw., habt es ja beim letzten schon gut gemacht!
+     <br><br>(die Felder mit * bitte ausgefüllen)<br><br>
+     </td></tr></table>
+    </td>
+   </tr>
+   <tr class=rowbglight>
+    <td class=text align=center><br>
+
+   <!-- Form starts here
+     <table cellpadding=0 cellspacing=0 border=0 class=tableborder><tr><td>
+      <table cellspacing=5 cellpadding=0 border=0>
+       <form action=sql.php onsubmit="return checkInput(0)">
+        <input type=hidden name=tabname value="48_8_dadgaestebuch">
+             <input type=hidden name=connr value="10">
+             <input type=hidden name=url value="album_confirm.php?typ=gb">
+             <input type=hidden name=mode value="new">
+             <input type=hidden name=PHPSESSID value="3cdcc3b6e8c8b1ce4ce82ea8023038fe">
+
+             <input type=hidden name=to_mail value="t.bielohlawek@gmx.de">
+             <input type=hidden name=mailfrom value="guestbook@lustauffotos.de">
+             <input type=hidden name=mailmode value="email">
+             <input type=hidden name=mailfields value="1">
+             <input type=hidden name=mailsubject value="Es wurde ins Gästebuch eingetragen">
+             <input type=hidden name=mailtextbefore value="Es wurde ins Gästebuch eingetragen von:
+">
+             <input type=hidden name=mailtextafter value="">
+             <input type=hidden name=48_0_i_8_plg_no_nr[0] value="7"><tr><td class=textbold>Name*:</td><td nowrap>&nbsp;<input  name=48_1_r_m_l_50_name[0] size="50" maxlength="100" value=""></td></tr>
+<tr><td class=textbold>Email*:</td><td nowrap>&nbsp;<input  name=48_2_r_m_l_50_email[0] size="50" maxlength="100" value=""></td></tr>
+<tr><td class=textbold>Homepage:</td><td nowrap>&nbsp;<input  name=48_3_m_l_50_homepage[0] size="50" maxlength="100" value=""></td></tr>
+<tr><td class=textbold>Message*:</td><td nowrap>&nbsp;<textarea name=48_4_r_m_l_8_c_40_message[0] cols="40" rows="8" wrap=virtual></textarea>&nbsp; </td></tr>
+        <tr class=rowbglight><td colspan=2 align=center><input type=submit value=Absenden></td></tr>
+       </form>
+      </table></td></tr>
+     </table> -->
+    </td>
+   </tr>
+   <tr height=30><td align=right class=headln>&nbsp;</td></tr>
+   <tr>
+    <td class=text align=center>
+  <!-- Data starts here -->
+     <table border=0>
+
+     <tr><td align=center>
+     <table width=70%>
+     <tr><td class=textbold valign=middle nowrap>Gabie Weuthen</td></tr>
+     <tr><td class=text valign=middle nowrap>&nbsp;Email:&nbsp;<a href=mailto:rainer.weuthen@ruhr-uni-bochum.de class=linksmall>rainer.weuthen@ruhr-uni-bochum.de</a>&nbsp;|&nbsp;eingetragen: &nbsp; am 8.1.2002 um 19:41  Uhr</td></tr>
+
+     <tr><td class=text valign=middle>Hallo Detlef,<br />
+ich habe mir mit Interesse die Bilder angeguckt, aber wer sind all die &quot;fremden Leute&quot;?<br />
+Trotzdem vielen Dank für den vergnüglichen Rätselspaß, <br />
+Herzlichst Gabie</td></tr>
+     <tr height=30><td align=center><hr noshade width=400 color=#1026AE></td></tr>
+     </table>
+     </td></tr>
+     <tr><td align=center>
+     <table width=70%>
+     <tr><td class=textbold valign=middle nowrap>sonja</td></tr>
+     <tr><td class=text valign=middle nowrap>&nbsp;Email:&nbsp;<a href=mailto:tvgustavsburg@t-online.de class=linksmall>tvgustavsburg@t-online.de</a>&nbsp;|&nbsp;URL:&nbsp;<a href="http://www.tvgustavsburg.de" target=_blank class=linksmall>www.tvgustavsburg.de</a>&nbsp;|&nbsp;&nbsp;eingetragen: &nbsp; am 8.1.2002 um 19:40  Uhr</td></tr>
+
+     <tr><td class=text valign=middle>lieber detlef und sohn,<br />
+danke für die arbeit<br />
+die bilder sind klasse hoffentlich sehen wir noch weitere.<br />
+viele grüße an alle von sonja</td></tr>
+     <tr height=30><td align=center><hr noshade width=400 color=#1026AE></td></tr>
+     </table>
+     </td></tr>
+     <tr><td align=center>
+     <table width=70%>
+     <tr><td class=textbold valign=middle nowrap>annemarie lecloux</td></tr>
+     <tr><td class=text valign=middle nowrap>&nbsp;Email:&nbsp;<a href=mailto:jclecloux@gmx.net class=linksmall>jclecloux@gmx.net</a>&nbsp;|&nbsp;eingetragen: &nbsp; am 8.1.2002 um 19:40  Uhr</td></tr>
+
+     <tr><td class=text valign=middle>Hallo Detlef,<br />
+Danke für die Vorarbeit und das Wühlen in unserer gemeinsamen Vergangenheit! Die Idee ist 'Klasse', wie immer braucht es den Leithammel. Ich freue mich sehr darauf!</td></tr>
+     <tr height=30><td align=center><hr noshade width=400 color=#1026AE></td></tr>
+     </table>
+     </td></tr>
+     <tr><td align=center>
+     <table width=70%>
+     <tr><td class=textbold valign=middle nowrap>Franz Zior</td></tr>
+     <tr><td class=text valign=middle nowrap>&nbsp;Email:&nbsp;<a href=mailto:ZIOR.DARMSTADT@t-online.de class=linksmall>ZIOR.DARMSTADT@t-online.de</a>&nbsp;|&nbsp;URL:&nbsp;<a href="http://www.ZIOR.de" target=_blank class=linksmall>www.ZIOR.de</a>&nbsp;|&nbsp;&nbsp;eingetragen: &nbsp; am 8.1.2002 um 19:39  Uhr</td></tr>
+
+     <tr><td class=text valign=middle>Hallo Bieloh !!!<br />
+nach 34 Jahren wieder die alte Truppe zusammen, ein weltbewegendes Ereignis ! Ich freu mich drauf !<br />
+Nette Idee mit der Homepage, sollte ausgebaut werden.<br />
+Bis 19.05.01<br />
+Gruß Franz</td></tr>
+     <tr height=30><td align=center><hr noshade width=400 color=#1026AE></td></tr>
+     </table>
+     </td></tr>
+     <tr><td align=center>
+     <table width=70%>
+     <tr><td class=textbold valign=middle nowrap>Roland Treber</td></tr>
+     <tr><td class=text valign=middle nowrap>&nbsp;Email:&nbsp;<a href=mailto:Roland.Treber@web.de class=linksmall>Roland.Treber@web.de</a>&nbsp;|&nbsp;eingetragen: &nbsp; am 8.1.2002 um 19:38  Uhr</td></tr>
+
+     <tr><td class=text valign=middle>Lieber Detlef,<br />
+lustig ist es schon (wie es Sonja ja auch empfindet); aber so ein bischen Herzklopen ist auch dabei. Danke für die Seite. Allerdings: ich wollte, es wären wirklich erst 24 Jahre her.<br />
+Bis bald. Ich freu mich schon.<br />
+Roland</td></tr>
+     <tr height=30><td align=center><hr noshade width=400 color=#1026AE></td></tr>
+     </table>
+     </td></tr>
+     <tr><td align=center>
+     <table width=70%>
+     <tr><td class=textbold valign=middle nowrap>Sonja Rautenberg</td></tr>
+     <tr><td class=text valign=middle nowrap>&nbsp;Email:&nbsp;<a href=mailto:paxbankmainz@t-online.de class=linksmall>paxbankmainz@t-online.de</a>&nbsp;|&nbsp;URL:&nbsp;<a href="http://www.tvgustavsburg.de" target=_blank class=linksmall>www.tvgustavsburg.de</a>&nbsp;|&nbsp;&nbsp;eingetragen: &nbsp; am 8.1.2002 um 19:36  Uhr</td></tr>
+
+     <tr><td class=text valign=middle>lieber detlef,<br />
+die bilder sind klasse, selten so gelacht<br />
+<br />
+viele grüße von sonja</td></tr>
+     <tr height=30><td align=center><hr noshade width=400 color=#1026AE></td></tr>
+     </table>
+     </td></tr>     </table>
+    </td>
+   </tr>
+  </table>
+ </body>
+</html>
