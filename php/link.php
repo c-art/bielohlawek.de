@@ -27,7 +27,7 @@ echo"
  $link[4]="site.php?cat=165&catname=Klassentreffen&str=1&aufl=100";
  $link[5]="";
  $link[6]="klassenliste.php";
- $link[7]="album_guestb.php";
+ $link[7]="album_guestb.html";
  $link[8]="";
  $link[9]="";
  $link[10]="";

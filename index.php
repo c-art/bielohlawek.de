@@ -8,6 +8,7 @@
 
 <html>
 <title>Realschulklasse 1967</title>
+<meta http-equiv="refresh" content="20; URL=start.php">
 <body>
 
 
@@ -26,16 +27,38 @@
 <table border=0 width=100%>
 <tr><td align=center>
 
+<!-- warning: playback does not work on iPad/iPhone if you include the poster attribute! fixed in iOS4.0                 -->
+<video width="800" height="440" muted autoplay="autoplay">
+    <!-- MP4 must be first for iPad! -->
+    <source src="klassentreffen.mp4" type="video/mp4" /><!-- WebKit video    -->
+    <source src="klassentreffen.webm" type="video/webm" /><!-- Chrome / Newest versions of Firefox and Opera -->
+    <source src="klassentreffen.ogg" type="video/ogg" /><!-- Firefox / Opera -->
+    <!-- fallback to Flash: -->
+    <object width="900" height="440" type="application/x-shockwave-flash" data="klassentreffen.swf">
+        <!-- Firefox uses the `data` attribute above, IE/Safari uses the param below -->
+        <param name="movie" value="klassentreffen.swfF" />
+        <param name="flashvars" value="image=klassentreffen.png&amp;file=klassentreffen.mp4" />
+        <!-- fallback image. note the title field below, put the title of the video there -->
+        <img src="klassentreffen.png" width="800" height="440" alt="Klassentreffen 1967"
+             title="No video playback capabilities, please download the video below" />
+    </object>
+</video>
+
+<!--
 <OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" WIDTH=800 HEIGHT=440>
- <?php echo'<PARAM NAME=movie VALUE="klassentreffen.swf'.$year.'">'; ?>
+ <?php #echo'<PARAM NAME=movie VALUE="klassentreffen.swf'.$year.'">'; ?>
  <PARAM NAME=loop VALUE=false> 
  <PARAM NAME=menu VALUE=false> 
  <PARAM NAME=quality VALUE=high> 
  <PARAM NAME=scale VALUE=exactfit> 
  <PARAM NAME=bgcolor VALUE=#FFFFFF> 
- <?php echo'<EMBED src="klassentreffen.swf'.$year.'" loop=false menu=false quality=high scale=exactfit bgcolor=#FFFFFF  WIDTH=800 HEIGHT=440 TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"></EMBED>'; ?>
+ <?php # echo'<EMBED src="klassentreffen.swf'.$year.'" loop=false menu=false quality=high scale=exactfit bgcolor=#FFFFFF  WIDTH=800 HEIGHT=440 TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"></EMBED>'; ?>
 </OBJECT>
+-->
+<br>
 
+<a href="/start.php" class="alink">-- Weiter --</a>
+<br><br>
 </td></tr>
 <tr><td align=center class="alink">best viewed in 800*600, IE or NE, Cookies and Javascript enabled<br><a href="http://www.c-art-web.de/sign/index.php?id=virtualbum_detlef" class="alink">(c) by C-Art Webdesign'00 - www.c-art-web.de</a></td></tr>
 
