@@ -5,6 +5,7 @@
  ?>
 
 <html>
+<meta http-equiv="refresh" content="1; URL=php/frame.php?aufl=1024">
 <script language="JavaScript">
   if (screen.width>1000) faktx='?aufl=1024';
   else if (screen.width>700) faktx='?aufl=600';

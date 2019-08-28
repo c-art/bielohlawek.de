@@ -21,10 +21,10 @@ echo"
 <map name=\"map\">";
 
  $link[0]="";
- $link[1]="site.php?cat=164&catname=Oberseemen&str=1&aufl=100";
- $link[2]="site.php?cat=163&catname=Grainau&str=1&aufl=100";
- $link[3]="site.php?cat=162&catname=Detlef&str=1&aufl=100";
- $link[4]="site.php?cat=165&catname=Klassentreffen&str=1&aufl=100";
+ $link[1]="/private/oberseemen";
+ $link[2]="/private/grainau";
+ $link[3]="/private/detlef";
+ $link[4]="/private/treffen";
  $link[5]="";
  $link[6]="klassenliste.php";
  $link[7]="album_guestb.html";
